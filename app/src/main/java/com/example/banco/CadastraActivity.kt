@@ -15,8 +15,7 @@ class CadastraActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_cadastra)
 
         binding.buttonCancela.setOnClickListener{
-            var i = Intent(this, MainActivity::class.java)
-            startActivity(i)
+            finish()
         }
 
 
