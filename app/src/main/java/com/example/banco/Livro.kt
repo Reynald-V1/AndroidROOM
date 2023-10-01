@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "Meus Livros")
-class Livro {
+class Livro(autor: String, ano: String, titulo: String, nota: Int) {
 
     @PrimaryKey(autoGenerate = true)
     var uid: Int = 0

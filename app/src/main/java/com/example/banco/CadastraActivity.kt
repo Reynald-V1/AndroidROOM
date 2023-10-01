@@ -1,12 +1,10 @@
 package com.example.banco
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.room.Room
 import com.example.banco.databinding.ActivityCadastraBinding
-import com.example.banco.databinding.ActivityMainBinding
 
 class CadastraActivity : AppCompatActivity() {
     lateinit var binding: ActivityCadastraBinding
@@ -26,9 +24,10 @@ class CadastraActivity : AppCompatActivity() {
         var titulo: String = binding.editTitulo.text.toString()
         var nota: Int = binding.nota.numStars
 
-        var livro = Livro(autor,ano,titulo,nota )
 
-        db.livroDao().insertAll(Livro(livro))
+        var livro = Livro(autor,ano,titulo,nota)
+
+        db.livroDao().insertAll(livro)
 
 
         binding.buttonCancela.setOnClickListener{
