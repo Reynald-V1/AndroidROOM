@@ -19,16 +19,19 @@ class CadastraActivity : AppCompatActivity() {
         ).build()
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_cadastra)
-        var autor: String = binding.editAutor.text.toString()
-        var ano: String = binding.editAno.text.toString()
-        var titulo: String = binding.editTitulo.text.toString()
-        var nota: Int = binding.nota.numStars
+
+        binding.buttonSalvar.setOnClickListener{
+
+            var autor: String = binding.editAutor.text.toString()
+            var ano: String = binding.editAno.text.toString()
+            var titulo: String = binding.editTitulo.text.toString()
+            var nota: Int = binding.nota.numStars
 
 
-        var livro = Livro(autor,ano,titulo,nota)
+            var livro = Livro(autor,ano,titulo,nota)
 
-        db.livroDao().insertAll(livro)
-
+            db.livroDao().insertAll(livro)
+        }
 
         binding.buttonCancela.setOnClickListener{
             finish()
